@@ -17,7 +17,7 @@ valid_ages = df['age'].dropna()
 valid_ages = valid_ages[valid_ages > 0]
 median_age = valid_ages.median()
 df['age'] = df['age'].apply(lambda x: median_age if pd.isna(x) or x <= 0 else x)
-df['name'] = df['name'].fillna('Aditya')
+df['name'] = df['name'].fillna('Amritesh')
 df['city'] = df['city'].fillna('Pune')
 df = df.dropna()
 print(df)
