@@ -23,8 +23,9 @@ df['salary'] = pd.to_numeric(df['salary'])
 valid_salaries = df['salary'].dropna()
 valid_salaries = valid_salaries[valid_salaries > 0]
 median_salary = valid_salaries.median()
-df['salary'] = df['salary'].apply(lambda x: median_salary if pd.isna(x) or x <= 0 else x)
-df['email'] = df['email'].fillna('abc@gmail.com')
+df['salary'] = df['salary'].
+apply(lambda x: median_salary if pd.isna(x) or x <= 0 else x)
+df['email'] = df['email'].fillna('amritesh@gmail.com')
 df['name'] = df['name'].fillna('Amritesh')
 df.to_csv('employee_cleaned2.csv', index=False)
 print("Data cleaning completed. Cleaned data saved to 'employee_cleaned.csv'.")
