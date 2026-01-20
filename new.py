@@ -3,7 +3,7 @@ import numpy as np
 import re
 
 df = pd.read_csv('customers.csv')
-df= df.drop_duplicates()
+df = df.drop_duplicates()
 
 
 def is_valid_email(email):
