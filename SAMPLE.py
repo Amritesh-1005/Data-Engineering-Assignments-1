@@ -8,7 +8,7 @@ df = df.drop_duplicates()
 
 def is_valid_email(email):
     if pd.isna(email):
-        return False
+        return Fals
     return re.match(r"[^@]+@[^@]+\.[^@]+", str(email)) is not None
 
 df['email'] = df['email'].apply(lambda x: x if is_valid_email(x) else np.nan)
@@ -25,7 +25,7 @@ valid_salaries = valid_salaries[valid_salaries > 0]
 median_salary = valid_salaries.median()
 df['salary'] = df['salary'].apply(lambda x: median_salary if pd.isna(x) or x <= 0 else x)
 df['email'] = df['email'].fillna('abc@gmail.com')
-df['name'] = df['name'].fillna('Tejas')
+df['name'] = df['name'].fillna('Amritesh')
 df.to_csv('employee_cleaned2.csv', index=False)
 print("Data cleaning completed. Cleaned data saved to 'employee_cleaned.csv'.")
 
